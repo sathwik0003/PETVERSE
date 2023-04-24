@@ -1,0 +1,109 @@
+<div class="products-navbar">
+    <ul class="navbar-nav">
+
+        <div class="navp">
+            <li id='list-food-button' class="nav-item">
+                <a class="nav-link" href="#">Food</a>
+            </li>
+        </div>
+        <div class="navp">
+            <li id='list-toys-button' class="nav-item">
+                <a class="nav-link" href="#">Toys</a>
+            </li>
+        </div>
+        <div class="navp">
+            <li id='list-accessories-button' class="nav-item">
+                <a class="nav-link" href="#">Accessories</a>
+            </li>
+        </div>
+        <div class="navp">
+            <li id='list-bed-button' class="nav-item">
+                <a class="nav-link" href="#">Bed</a>
+            </li>
+        </div>
+        <div class="navp">
+            <li id='list-grooming-button' class="nav-item">
+                <a class="nav-link" href="#">Grooming</a>
+            </li>
+        </div>
+        <div class="navp">
+            <li id='list-cloth-button' class="nav-item">
+                <a class="nav-link" href="#">Clothing</a>
+            </li>
+        </div>
+    </ul>
+</div>
+
+
+
+<div class="container1">
+    <div id="list-container-cat">
+        <div id="root-cat">
+            <% products.forEach(product => { %>
+                <div class='box'>
+                    <div class='img-box'>
+                      <a href="/single">  <img class='images' src='<%= product.image %>'></img></a>
+                    </div>
+                    <div class='bottombox'>
+                <div class='bottom'>
+                <h1><%= product.title %></h1><br>
+               <b> <p><%= product.description %></p> </b>
+               
+                <h2>Rs.<%= product.price %> </h2>` +
+                "<button id='cartbutton' onclick='addtocart_dog(" + (i) + ")'>Add to cart</button>" +
+        
+                `</div>
+                 <div class="wish">` + "<button id='wishbutton' onclick='addtowish_dog("+(i)+")'><i class='fa-regular fa-heart'></i></button>"+ i++ +`</div>
+        </div>
+                </div>
+                <% }) %>
+        </div>
+       
+    </div>
+    <div id="list-container-food">
+        <div id="root-food"></div>
+
+    </div>
+    <div id="list-container-toys">
+        <div id="root-toys"></div>
+
+    </div>
+    <div id="list-container-accessories">
+        <div id="root-accessories"></div>
+
+    </div>
+    <div id="list-container-bed">
+        <div id="root-bed"></div>
+
+    </div>
+    <div id="list-container-grooming">
+        <div id="root-grooming"></div>
+
+    </div>
+    <div id="list-container-cloth">
+        <div id="root-cloth"></div>
+
+    </div>
+    <div id="cartcontainer">
+        <div class="sidebar">
+            <div class="head">
+               <h1>CART</h1>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">Rs. 0.00</h2>
+            </div>
+            <button id="buy">BUY</button>
+        </div>
+    </div>
+    <div id="wishcontainer">
+        <div class="sidebar">
+            <div class="head">
+                <h1>WISHLIST</h1>
+            </div>
+            <div id="wishItem">Your wishlist is empty</div>
+        
+        </div>
+    </div>
+</div>

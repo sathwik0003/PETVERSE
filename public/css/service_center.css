@@ -1,0 +1,151 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.header2{
+  width:76vw;
+  height:26.5vh;
+  padding:2 6%;
+  top:12px;
+  background-color:rgb(120, 154, 212);
+  background-position: left;
+  border-radius: 1vh;
+  border-top-right-radius: 240vh;
+  border-bottom-right-radius: 240vh;
+  margin-left: 2vh;
+ 
+}
+.text-box2{
+   /* max-width:10vh ;  */
+  padding:57px;
+  margin-left: 90px;;
+}
+
+.user-box2{
+ 
+   position:absolute;
+   top:8.5vh;
+   bottom:15vh;
+   right :-2%;
+
+}
+.user-box2 img{
+    width:26vw;
+    display:block;
+    margin-right:4vw;
+    
+    margin-top: 1vh;
+    border-top: 14vw;
+   
+}
+
+.saloon{
+  display:flex;
+  margin: 10px 6vw;
+  justify-content: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.saloondetails h1{
+  padding:6px;
+  
+  margin-left:25px;
+}
+.saloon h1{
+  font-size: 3vw;
+ 
+}.img{
+  border-radius: 30px;
+}
+
+.salp{
+  padding-left: 3vw;
+  margin-top: 50px;
+  padding-right: 50px;
+  font-size: 1.5vw;
+}
+
+.saloon1{
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 2vw;
+  margin: 0 3vw;
+}
+.services{
+  display:flex;
+  margin-right: 10vw;
+}
+.service{
+  margin-left: 10vw;
+  border-left: 2px solid black;
+  padding-left: 10vw;
+}
+.servi{
+  padding: 0.6vw 0px;
+}
+#serv1{
+  margin-right: 7vw;
+}
+#serv2{
+  margin-left: 7vw;
+}
+.sert{
+  padding: 0.6vw 0;
+}
+.saloon2{
+  display: flex;
+  margin: 10px 3vw;
+  padding: 2vw;
+  width: 90vw;
+  border-radius: 4px;
+  background-color:rgba(0, 0, 0, 0.182);
+}
+#paysal1{
+  padding: 1.5vw 5vw;
+  border-radius: 30px;
+  margin-left: 20px;
+  border:1.5px solid black;
+  background-color: rgba(5, 116, 124, 0.629);
+  color: rgba(13, 11, 11, 0.847);
+}
+#paysal2{
+  padding-left: 10vw;
+}
+#paysal2 button{
+  padding: 1vw;
+  border-radius: 12px;
+  background-color:rgb(9, 121, 129) ;
+  color: white;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+@media(max-width:1000px){
+  .salp{
+    font-size:2vw ;
+  }
+}
+
+
+@media(max-width:710px){
+  .saloon{
+    display: flex;
+    flex-direction: column;
+  }
+  .salp{
+    font-size:15px ;
+  }
+}
+
+@media (max-width:500px){
+  .salp{
+    font-size: 15px;
+  }
+  .saloon h1{
+    font-size: 5vw;
+  }
+}
+
+

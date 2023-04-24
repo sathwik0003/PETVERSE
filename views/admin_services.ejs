@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    }
+    legend{
+        margin-left: 29px;
+        color: #747474;
+        margin-top: 50px;
+       }
+       .form2{
+        
+        background-color: white;
+        margin-top: 39px;
+        width: 561px;
+        margin-left: 450px;
+    border: 1px solid #a7a5a5;
+       }
+       .ok{
+        width: 176px;
+        margin: 20px;
+       }
+       .again{
+        display: flex;
+        flex-wrap: wrap;
+       }
+       img{
+        width: 70px;
+       }
+       .one{
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #00000040;
+             }
+             h4{
+              padding: 10px;
+              margin-left: 310px;
+             }
+</style>
+<body>
+    <!-- previous-orders.ejs -->
+
+  
+
+
+    <p style="background-color: white;
+    height: 50px;
+    margin-top: 8px;
+    padding: 0px 568px;
+    font-size: 30px;
+    font-family: 'Prompt', sans-serif;
+">SERVICES</p></header>
+
+   <div>
+        <% ticket.forEach(ticket => { %>
+            
+                <div class="again">
+                        <div class="one">
+                            <div class="ok"> <img src="/static/images/cs1.jpeg" alt=""> </div>
+                            <div class="ok">Id: <%= ticket._id  %></div>
+                            <div class="ok">Name: <%= ticket.username  %></div>
+                            <div class="ok">TimeSlot: <%= ticket.timings %></div>
+                            <div class="ok">Services: <%= ticket.service %></div>
+                            <div class="ok">Center: <%= ticket.center %></div>
+                        </div>
+                       
+                </div>
+           
+        <% }) %>
+    </div>
+</body>
+
+</html>

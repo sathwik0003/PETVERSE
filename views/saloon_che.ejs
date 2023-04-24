@@ -1,0 +1,105 @@
+<%-include('./partials/top.ejs') %> 
+    <!-- <link rel="stylesheet" href="pc.css"> -->
+   
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<style>
+       .products-navbar a{
+    text-decoration: none;
+    color: white;
+   }
+   a{
+    text-decoration: none;
+   }
+   .products-navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   li{
+    list-style: none;
+   }
+   .navp{
+    padding: 0 4vw;
+   }
+   .products-navbar{
+    height: 100%;
+    background-color: black;
+   }
+   .box{
+    border: 1px solid rgb(37, 37, 37);
+    display: flex;
+    margin: 15px 0px;
+    background-color: #cecece;
+   }
+   .bottom{
+    text-align: center;
+   }
+    #p1{
+font-size: 65px;
+margin: 12px;
+   }
+    #p2{
+font-size: 15px;
+color: #5c5757;
+   }
+    #p3{
+font-size: 20px;
+margin: 28px;
+   }
+#pic{
+    margin: 51px 21px;
+}
+</style>
+<body>
+    <%-include('./partials/header.ejs') %> 
+    
+      <div class="products-navbar">
+        <ul class="navbar-nav">
+
+            <div class="navp">
+                <li id='list-hyd-button' class="nav-item">
+                    <a class="nav-link" href="/saloonhyd">Hyderabad</a>
+                </li>
+            </div>
+            <div class="navp">
+                <li id='list-bgr-button' class="nav-item">
+                    <a class="nav-link" href="saloonban">Banaglore</a>
+                </li>
+            </div>
+            <div class="navp">
+                <li id='list-che-button' class="nav-item">
+                    <a class="nav-link" href="saloonche">Chennai</a>
+                </li>
+            </div>
+            <div class="navp">
+                <li id='list-mum-button' class="nav-item">
+                    <a class="nav-link" href="saloonmum">Mumbai</a>
+                </li>
+            </div>
+            
+        </ul>
+    </div>
+    <div>
+        <%chesaloons.forEach(chesaloon=>{%>
+            <div class='box'>
+                <div class='img-box'>
+                    <form action="/cservice" method="post">
+                        <input type="hidden" name="chesaloonid" value="<%= chesaloon._id %>">
+                        <input type="hidden" name="chesaloonname" value="<%= chesaloon.saloonTitle %>">
+                        <button type="submit" id="pic"><img class='images' src="<%=chesaloon.saloonImage %>"></img></form></button>
+                </div>
+            <div class='bottom'>
+            <p id="p1"><%= chesaloon.saloonTitle %></p>
+            <p id="p2"><%= chesaloon.saloonDescription %></p>
+            <p id="p3">Address:<%= chesaloon.saloonAddress %></p>
+            </div>
+            </div>
+        <%}) %>
+    </div>
+    <%-include('./partials/footer.ejs') %> 
+</body>
+
+</html>

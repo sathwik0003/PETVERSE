@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .small-img-group {
+            display: flex;
+            justify-content: space-between;
+            width: 450px;
+            padding: 10px;
+        }
+        .small-img-col {
+            flex-basis: 100%;
+            cursor: pointer;
+
+        }
+        .row{
+            display: flex;
+        }
+        input{
+            width:40px;
+            height:20px
+           
+        }
+        button{
+            padding:6px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+       
+        .buy-btn{
+            background:black;
+            color:white;
+            padding:8px;
+            margin:10px;
+            margin-left: 4px;
+            border-radius: 5px;
+            word-spacing:4px;
+        }
+        .buy-btn:hover{
+            color:black;
+            
+            background-color: white;
+        }
+        .img-fluid{
+            border:1px solid black;
+        }
+        .row .col-lg-5 col-md-12 col-12{
+           width:90px;
+        }
+        .c1{
+            margin-top: 2vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            border: 2px solid black;
+        }
+        .c1 form{
+            width: 100%;
+            text-align: center;
+        }
+        .c2{
+            
+            border: 2px solid black;
+        }
+        .c3{
+            margin-top: 2vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            border: 2px solid black;
+        }
+        .r1{
+            margin-top: 1vw;
+            margin-bottom: 2vw;
+        }
+
+        .u1{
+            padding-top: 1vw;
+            padding-left: 4vw;
+        }
+        .r1{
+            padding-left: 3vw;
+            padding-right: 4vw;
+        }
+        .g1{
+            width: 3vw;
+            height: 2vw;
+            background-color: rgb(2, 135, 2);
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <%-include('./partials/header.ejs') %> 
+    <section class="py-5">
+        <div class=" px-4 px-lg-5 my-5" style="border: 1px solid black;
+        margin: 51px;">
+            <div class="row gx-4 gx-lg-5 align-items-center" style="margin:104px 79px">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<%=product.image%>" alt="..." /></div>
+                <div class="col-md-6">
+                   
+                    <h1 class="display-5 fw-bolder"><%=product.name%></h1>
+                    <div class="fs-5 mb-5">
+                        <span class="text-decoration-line-through" style="line-height: 3; font-size: 22px;">Rs.<%=product.price%></span>
+                       
+                    </div>
+                    <p class="lead"><%=product.description%> </p>
+                    <div class="d-flex">
+                        
+                        <!-- <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                          
+                            Add to cart
+                        </button> -->
+                        <div class="icon" style="display: flex;">
+                            <form method="POST" id="add-to-cart-form" action="/add-to-cart-dog" >
+                                <input type="hidden" name="productId" value="<%= product._id %>">
+                            <button class="btn btn-outline-primary px-3" id="add"  type="submit">Add to cart</button>
+                            
+                        </form>
+                        <form method="POST" action="/add-to-wish">
+                            <input type="hidden" name="productId" value="<%= product._id %>">
+                      
+                      <button id="wish" style="margin:0px 19px;"><i class="fa-regular fa-heart "></i></button>
+                    </form>
+                        </div>
+                        <div class="div3" >
+                            <form action="/review" method="post">
+                                <input type="hidden" name="productId" value="<%= product._id %>">
+                                <textarea id="review" name="review" rows="7" columns="200" style="margin-top:27px" placeholder="Write a review"></textarea>
+                                <select id="star" name="star" class="c2">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select><i class="fa-regular fa-star"></i>
+                            
+                            <button type="submit">Add review</button>
+                        </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-5 bg-light">
+        <div class="px-4 px-lg-5 mt-5">
+            <h2 class="fw-bolder mb-4" style="margin-left: 660px;">Reviews</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="display: flex; flex-wrap: wrap;">
+                <% reviews.forEach(review=>{%>
+                <div class="col mb-5" style="    margin-bottom: 18px;
+                margin-left: 55px;">
+                    <div class="card h-100" style="    margin: 0px 73px;
+                    width: 250px;
+                    height: 300px;
+                    background-color: #eee;
+                    ">
+                        
+                        <img class="card-img-top" src="/static/images/img.png" alt="..."   style="    width: 160px;
+                        height: 114px;
+                        margin-left: 42px;
+                        margin-top: 10px;"/>
+                      
+                            <div class="u1" style="font-size: 20px;"><%= review.username %></div>
+                            <div class="u1"><div class="g1" style="padding:5px;"><%= review.star %><i class="fa-regular fa-star"></i></div></div>
+                            <div class="r1"><%= review.review %></div>
+                       
+                        
+                    </div>
+                </div>
+                <%}) %>
+                
+                
+            </div>
+        </div>
+    </section>
+
+     
+
+    </section>
+  
+    <script>
+              var size=document.querySelector("#id1");
+              size.addEventListener('click',()=>{
+                size.style.border="3px solid black"
+                but1.style.border="none"
+              })
+              
+
+              var but1=document.querySelector("#id2");
+              but1.addEventListener('click',()=>{
+                but1.style.border="3px solid black"
+                size.style.border="none"
+              })
+              
+              
+    </script>
+</body>
+
+</html>

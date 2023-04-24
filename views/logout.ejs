@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background-image: url('static/images/account-background.jpeg');
+      background-size: cover;
+    }
+    #lg1{
+      height: 29vh;
+    width: 34vw;
+    margin-top: 9vw;
+    margin-left: 31vw;
+    border: 2px solid rgb(70, 68, 68);
+    backdrop-filter: blur(5px);
+    border-radius: 11px;
+  }
+  #lg1 h2{
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  #lg2{
+    display: flex;
+    margin-top: 5vw;
+  }
+  #c{
+    margin-left:5vw ;
+  }
+  #l{
+    margin-left: 11vw;
+    background-color: rgba(225, 95, 95, 0.763);
+  }
+button{
+  width: 7vw;
+  height: 3vw;
+  border-radius: 10px;
+}
+  </style>
+</head>
+<body>
+  <div id="lg1">
+    <h2>Are you sure to logout?</h2>
+   <div id="lg2">
+    <form action="/loutcancel" method="get">
+      <button id="c">Cancel</button>
+    </form>
+    <form action="/lout" method="get">
+      <button id="l">Logout</button>
+    </form>
+   </div>
+  </div>
+</body>
+</html>

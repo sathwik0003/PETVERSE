@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+      background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      background-size: cover;
+    }
+        .c1{
+            display: grid;
+            padding:5vw;
+            backdrop-filter: blur(10px);
+        }
+        .c2{
+            margin-left: 10vw;
+            margin-top: 5vw;
+            margin-right: 10vw;
+            padding:10px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color:rgb(231, 226, 226);
+        }
+        .c{
+            padding: 8px;
+            margin-top: 5px;
+        }
+        h1{
+            width: 100%;
+            color: rgb(94, 93, 91);
+            text-align: center;
+        }
+        button{
+            width:130px;
+            margin-left: 750px;
+            border-radius: 4px;
+            font-size: 15px;
+             
+        }
+        button:hover{
+            background-color:black;
+            color:white;
+            cursor: pointer; 
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Raise you're voice-File a Complaint</h1>
+    <div class="c2">
+        <form action="/comp" method="post">
+            <div class="c1">
+          
+            <label for="complaint">Complaint:</label>
+            <textarea id="complaint" name="complaint" class="c"></textarea>
+          
+            <label for="suggestions">Suggestions:</label>
+            <textarea id="suggestions" name="suggestions" placeholder="NO if none" class="c"></textarea>
+          
+            <label for="products">Any other products:</label>
+            <input type="text" id="products" name="products" placeholder="NO if none" class="c">
+          
+            <button type="submit" class="c">Submit</button>
+            </div>
+          </form>
+    </div>
+      
+</body>
+</html>

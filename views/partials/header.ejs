@@ -1,0 +1,83 @@
+<header>
+    <nav>
+      <div>
+        <a href="\main"><img src="static/images/logo.jpeg" alt=""></a>
+      </div>
+      <div class="input_header">
+        <form action="/search" class="fh" method="POST"><input type="search" placeholder="Search" id="#inputbtn" name="search">
+          <button type="submit" class="blogo">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <section id="searchResults">
+
+        </section>
+      </div>
+      <div class="login" id="login">
+        <ul id="un1">
+          <li><a href="/account" class="active" style="width: 6vw;"><div id="lora">Account</div></a></li>
+          <li><a href="/logout">LogOut</a></li>
+          <li id="sell1"><a href="/selllogin" id="sell"><i class="fa-solid fa-magnifying-glass-dollar"></i>Sell</a></li>
+          
+          
+          <div class="dropdown">
+            <li>
+             <button onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-globe"></i></button></li>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="">Hyderabad</a>
+              <a href="">Chennai</a>
+              <a href="">Bangalore</a>
+              <a href="">Mumbai</a>
+              
+              
+            </div>
+          </div>
+        </ul>
+        <div class="hresponsive">
+         
+          <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn"><i class="fas fa-bars"></i></button>
+            <div id="Dropdown" class="dropdown-content">
+              <a href="/account">MyAccount</a>
+              <a href="/orders">Orders</a>
+              <a href="/sell">Sell</a>
+              
+              <a href="/dogs">Dogs</a>
+              <a href="/cats">Cats</a>
+              <a href="/saloon">Saloon</a>
+              <a href="/wish">Wishlist</a>
+              <a href="/cart">Cart</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="hcw">
+          <ul id="hcw">
+            <li class="ddrop"><a href="/dogs" class="hbottom">
+              <div class="dropdown">
+                <span>Dogs</span>
+              </div>
+            </a></li>
+          <li class="cdrop"><a href="/cats" class="hbottom">
+              <div class="dropdown">
+                <span>Cats</span>
+
+                <!-- <li><a href="" class="hbottom">Cats</a></li> -->
+          <li><a href="/saloon" class="hbottom">Saloon</a></li>
+          
+          <li id="wishPage"><a class="nav-link" href="/wish" calss="hbottom">
+              <div class="wish" style="color:black;"><i class="fa-regular fa-heart"></i>
+                
+              </div>
+          </a></li>
+          <li id="cartPage"><a class="nav-link" href="/cart" class="hbottom" >
+              <div class="cart" style="color:black;"><i class="fa-solid fa-cart-shopping"></i>
+                 
+              </div>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>

@@ -1,0 +1,288 @@
+<%-include('./partials/top.ejs') %> 
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/dogshop.css">
+  <link rel="stylesheet" href="css/catshop.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/fullbox.css">
+  <link rel="icon" type="image/x-icon" href="static/images/logo.jpeg">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div>
+        <a href=""><img src="/static/images/logo.jpeg" alt=""></a>
+      </div>
+      <div class="input_header">
+        <form action="" class="fh"><input type="search" placeholder="Search" id="#inputbtn">
+          <button type="submit" class="blogo">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+      <div class="login" id="login">
+        <ul id="un1">
+          <li><a href="/login" class="active">
+              <div id="lora">Login</div>
+            </a></li>
+          <li><a href="/signup">SignUp</a></li>
+          <li id="sell1"><a href="/login" id="sell"><i class="fa-solid fa-magnifying-glass-dollar"></i>Sell</a></li>
+          <div class="dropdown">
+            <li>
+              <button onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-globe"></i></button>
+            </li>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="">Hyderabad</a>
+              <a href="">Chennai</a>
+              <a href="">Bangalore</a>
+              <a href="">Mumbai</a>
+
+
+            </div>
+          </div>
+        </ul>
+        <div class="hresponsive">
+
+
+          <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn"><i class="fas fa-bars"></i></button>
+            <div id="Dropdown" class="dropdown-content">
+              <a href="/login">Signup</a>
+              <a href="/login">Login</a>
+              <a href="/login">Sell</a>
+
+              <a href="/login">Dogs</a>
+              <a href="/login">Cats</a>
+              <a href="/login">Saloon</a>
+              <a href="/login">Wishlist</a>
+              <a href="/login">Cart</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="hcw">
+          <ul id="hcw">
+            <li class="ddrop"><a href="/login" class="hbottom">
+                <div class="dropdown">
+                  <span>Dogs</span>
+                </div>
+              </a></li>
+            <li class="cdrop"><a href="/login" class="hbottom">
+                <div class="dropdown">
+                  <span>Cats</span>
+
+                  <!-- <li><a href="" class="hbottom">Cats</a></li> -->
+            <li><a href="/login" class="hbottom">Saloon</a></li>
+
+            <li id="wishPage"><a class="nav-link" href="/login" calss="hbottom">
+                <div class="wish" style="color:black;"><i class="fa-regular fa-heart"></i>
+
+                </div>
+              </a></li>
+            <li id="cartPage"><a class="nav-link" href="/login" class="hbottom">
+                <div class="cart" style="color:black;"><i class="fa-solid fa-cart-shopping"></i>
+                  <p id="count">0</p>
+                </div>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="box_1">
+    <marquee behavior="" direction="left"><a href="/login">Try our saloons and get exclusive discounts</a>_____<a href="/login">Get
+        our best deals</a>_____<a href="/login">Buy our exclusive merchandise</a></marquee>
+  </div>
+  <div class="sbody">
+    <div class="slider">
+      <div class="slides">
+        <input type="radio" name="radiobtn" id="r1">
+        <input type="radio" name="radiobtn" id="r2">
+        <input type="radio" name="radiobtn" id="r3">
+        <input type="radio" name="radiobtn" id="r4">
+        <div class="slide first">
+          <img src="/static/images/a4.png" alt="" id="img1">
+          <div id="content1">
+            <p
+              style="position: relative;left: 22vw;top:-63vh;font-size:3vw;font-family: 'Mukta', sans-serif;font-weight: bold;">
+              SHOP ACCESSORIES FOR YOUR PET</p>
+            <button style="position: relative;
+        top: -62vh;
+        left: 18vw;
+        padding: 1vw 7vh;
+        border-radius: 2vw; cursor: pointer;font-weight: bold; " onclick="window.location.href='/login'">DOG</button>
+            <button style="position: relative;
+        top: -62vh;
+        left: 62vw;
+        padding: 1vw 7vh;
+        border-radius: 2vw; cursor: pointer; font-weight: bold;" onclick="window.location.href='/login'">CAT</button>
+          </div>
+          <div id="content1_1">
+            <p
+              style="position: relative;left: 22vw;top:-48vh;font-size:3vw;font-family: 'Mukta', sans-serif;font-weight: bold;">
+              SHOP ACCESSORIES FOR YOUR PET</p>
+            <button style="position: relative;
+        top: -46vh;
+        left: 18vw;
+        padding: 1vw 3vh;
+        border-radius: 2vw; cursor: pointer;font-weight: bold;" onclick="window.location.href='/login'">DOG</button>
+            <button style="position: relative;
+        top: -46vh;
+        left: 43vw;
+        padding: 1vw 3vh;
+        border-radius: 2vw; cursor: pointer; font-weight: bold;" onclick="window.location.href='/login'">CAT</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/static/images/a8.jpg" alt="" id="img2">
+          <div id="content2">
+            <p style=" position: relative;
+        top: -46vh;
+        left: 51vw;
+        font-size: 3vw;  ">Exclusive Saloon Services</p>
+            <button style="position: relative;
+        top: -45vh;
+        left: 55vw;
+        padding: 1vw 7vh;
+        border-radius: 22px;
+        color: white;
+        background-color: black;" onclick="window.location.href='/login'">Book Now</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/static/images/a2.webp" alt="" id="img3">
+          <div id="content3">
+            <p style="font-size: 3vw;margin-top: 1vh;font-family: 'Josefin Sans', sans-serif;">EVERY PET ESSENTIALS</p>
+            <p style="font-size: 1.5vw;margin-top: 0vh;margin-left: 10vw;font-family: 'Zeyada', cursive;">
+              Treats|Accessories|food</p>
+            <button style="padding: 1vw 2vh;border-radius: 2vw;margin-left: 12vw;cursor: pointer;"
+              onclick="window.location.href='/login'">Shop Now</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/static/images/a6.webp" alt="" id="img3">
+          <div id="content4">
+            <p style="position:relative;left:9vw;top:-46vh;font-size:2vw;font-family: 'EB Garamond', serif;">FIND YOUR
+              PERFECT PET</p>
+            <button
+              style="padding:1vw67vh;border-radius:3vw;position:relative;left:9vw;top:-44vh;cursor:pointer;background-color:rgba(154, 185, 185, 0.686);font-size:2vw"
+              onclick="window.location.href='/login'">SHOP
+              NOW</button>
+          </div>
+        </div>
+        <div class="navigationauto">
+          <div class="autobtn1"></div>
+          <div class="autobtn2"></div>
+          <div class="autobtn3"></div>
+          <div class="autobtn4"></div>
+        </div>
+      </div>
+      <div class="navigationmanual">
+        <label for="r1" class="manualbtn"></label>
+        <label for="r2" class="manualbtn"></label>
+        <label for="r3" class="manualbtn"></label>
+        <label for="r4" class="manualbtn"></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="dbody">
+    <p>Shop for Doggos</p>
+
+    <div class="dshop1">
+      <div class="dshop"><a href="/login"><img src="/static/images/dog_food.jpg" alt="" id="deat"></a>
+        <h2>Dog Food</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/da1.jpg" alt="" id="deat"></a>
+        <h2>Dog Accessories</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/dog_clothing.webp" alt="" id="deat"></a>
+        <h2>Dog Clothing</h2>
+      </div>
+
+      <div class="dshop"><a href="/login"><img src="/static/images/dog_groom.jpg" alt="" id="deat"></a>
+        <h2>Dog Grooming</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/dog_bed.webp" alt="" id="deat"></a>
+        <h2>Dog Beds</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/dog_toys.jpg" alt="" id="deat"></a>
+        <h2>Dog Toys</h2>
+      </div>
+    </div>
+  </div>
+  <div class="cbody">
+    <p>Shop for Kittos</p>
+
+    <div class="dshop1">
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_food.jpg" alt="" id="deat"></a>
+        <h2>Cat Food</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_accesaries.jpg" alt="" id="deat"></a>
+        <h2>Cat Accessories</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_clothing.jpg" alt="" id="deat"></a>
+        <h2>Cat Clothing</h2>
+      </div>
+
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_groom.jpg" alt="" id="deat"></a>
+        <h2>Cat Grooming</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_bed.jpg" alt="" id="deat"></a>
+        <h2>Cat Beds</h2>
+      </div>
+      <div class="dshop"><a href="/login"><img src="/static/images/cat_toy.jpg" alt="" id="deat"></a>
+        <h2>Cat Toys</h2>
+      </div>
+    </div>
+  </div>
+  <div class="fllbox">
+    <div class="container">
+      <div class="cont">
+        <div class="box1">
+          <!-- <div class="content1">
+                    <p>DOGS</p>
+                </div> -->
+          <a href="/login"> <img src="/static/images/dog_box.jpg" alt=""></a>
+        </div>
+        <div class="box2">
+          <h1>Dog Breeds</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cont">
+        <div class="box1">
+          <!-- <div class="content1">
+                    <p>DOGS</p>
+                </div> -->
+          <a href="/login"> <img src="/static/images/cat_box.jpg" alt=""></a>
+        </div>
+        <div class="box2">
+          <h1>Cat Breeds</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include('./partials/footer.ejs') %> 
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var counter = 1;
+    setInterval(function () {
+      document.getElementById("r" + counter).checked = true;
+      counter++;
+      if (counter > 4) {
+        counter = 1;
+      }
+    }, 3000);
+  </script>
+</body>
+
+</html>

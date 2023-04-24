@@ -1,0 +1,336 @@
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.logo {
+    width: 16.624vw;
+    height: 14.95vh;
+    margin-bottom: -5px;
+}
+
+nav {
+    display: flex;
+}
+
+.fh {
+    padding: 2.5vh;
+    margin: 2.5vh;
+    text-align: center;
+}
+
+input {
+    margin-left: 4vw;
+    height: 45px;
+    width: 22vw;
+    border-top-left-radius: 3vw;
+    border-bottom-left-radius: 3vw;
+    padding-left: 2vw;
+    margin-right: -0.4vw;
+}
+
+.input_header {
+    text-align: center;
+}
+
+header {
+    background-image: linear-gradient(to right, #eef3f6, #00ffff61);
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    border-top: 1.5px solid black;
+}
+
+.blogo {
+    height: 45px;
+    width: 3vw;
+    border-top-right-radius: 3vw;
+    border-bottom-right-radius: 3vw;
+    cursor: pointer;
+}
+
+@keyframes widthanimationinput {
+    from {
+        width: 4vw;
+        height: 45px;
+    }
+
+    to {
+        width: 22vw;
+        height: 45px;
+    }
+}
+
+input {
+    animation-name: widthanimationinput;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+header img {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+header input:hover {
+    height: 50px;
+    width: 23vw;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+nav #un1 li a {
+    display: block;
+    text-decoration: none;
+    width: 5vw;
+    height: 30px;
+    background-color: #58b4e4cf;
+    text-align: center;
+    padding-top: 1vw;
+    border-radius: 10vw;
+    margin: 0vw 2vw 0vw 2vw;
+    color: rgb(0, 0, 0);
+}
+
+
+nav #login ul {
+    display: flex;
+}
+
+nav #login {
+    display: grid;
+    align-items: center;
+    margin-left: 15vw;
+}
+
+header #un1 li a:hover {
+    height: 35px;
+    width: 75px;
+}
+
+nav div a img:hover {
+    height: 140px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+nav #hcw li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 1vw;
+    border-radius: 10vw;
+    margin: 0vw 2vw 0vw 2vw;
+    color: rgb(0, 0, 0);
+}
+
+.box1 {
+    height: 20px;
+    background-color: #ff000094;
+    border-top: 2px solid black;
+}
+
+.box1 a {
+    text-decoration: none;
+    color: black;
+} */
+
+
+.container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    flex:100%;
+    
+}
+
+.container .card {
+    position: relative;
+   
+    height: 256px;
+    background: #fff;
+    margin: 91px 208px;
+    padding: 20px 15px;
+    display: flex;
+    
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+   
+    width: 45vw;
+    
+}
+
+
+
+.container .card .imgBx {
+   
+background-size: cover;
+width: 264px;
+height: 256px;
+
+z-index: 1;
+
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+
+}
+
+.container .card .content {
+   
+    padding: 10px 15px;
+   
+    color: #111;
+    
+    width: 249px;
+   
+    margin: auto;
+}
+
+.container .card .content p{
+font-family: 'Crimson Text', serif;
+font-size: 18px;
+}
+
+#li1 {
+    display: inline-block;
+}
+
+#li2 {
+    display: inline-block;
+}
+
+.card p {
+    display: inline-block;
+
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.breeds{
+display: flex;
+
+}
+.one {
+flex: 50%;
+}
+.three{
+flex: 50%;
+}
+.five{
+flex: 50%;
+}
+.seven{
+flex: 50%;
+}
+.nine{
+flex: 50%;
+}
+.eleven{
+flex: 50%;
+}
+.two{
+flex: 42%;
+padding: 0px 0px 0px 340px;
+}
+.two .card{
+position: relative;
+/* max-width: 300px; */
+height: 256px;
+background: #fff;
+margin: 91px 208px;
+padding: 20px 15px;
+display: flex;
+
+box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+
+width: 45vw;
+
+
+/* 
+position: relative;
+   
+    height: 256px;
+    background: #fff;
+    margin: 91px 208px;
+    padding: 20px 15px;
+    display: flex;
+    
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    width: 45vw; */
+    
+}
+.imgBx img:hover{
+transform: scale(1.2);
+}
+@media (max-width:1235px){
+.one .three .five .seven .eleven .nine{
+    height: 663px;
+   
+}
+.container .card{
+    height: 573px;
+    flex-wrap: wrap;
+    width: 260px;
+}
+.two .card{
+    height: 573px;
+    flex-wrap: wrap;
+    width: 260px;
+}
+}
+@media (max-width:973px){
+.container .card{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+}
+@media(max-width:580px){
+.container .card{
+    margin: auto;
+}
+}
+@media (max-width:991px){
+.two .card {
+    padding:0px
+}
+}
+@media (max-width:758px){
+.two .card{
+   
+    padding: 0;
+}
+.two{
+    padding-left: 0;
+    margin-bottom: 30px ;
+    margin-top: 30px;
+}
+}

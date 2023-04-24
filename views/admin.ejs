@@ -1,0 +1,61 @@
+<%-include('./partials/admin.ejs') %> 
+            <section style="display: flex;flex-wrap: wrap;">
+                <% products.forEach(product => { %>
+                    
+                <div class="container py-5" style="width:380px;margin:0px;background-color: #eee;">
+                  <div class="row" style="margin: 2px;">
+                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+                      <div class="card">
+                        <div class="d-flex justify-content-between p-3">
+                          
+                          <div
+                            class=" rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
+                            style="width: 35px; height: 35px;">
+                           
+                          </div>
+                        </div>
+                        <div>
+                            <img src="   <%=product.image%>" alt="">
+                            <!-- <%=product.image%> -->
+                        </div>
+                        <div class="card-body" style="width: 332px;">
+                          <div class="d-flex justify-content-between">
+                            <p class="" style="font-size: 20px;"><a href="#!" ><%= product.name %></a></p>
+                            <p >Rs.<%= product.price %></p>
+                          </div>
+              
+                          <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0"><%= product.description %></h5>
+                           
+                          </div>
+              
+                          <div class="d-flex justify-content-between mb-2">
+                            <p class="text-muted mb-0">Available: <span class="fw-bold"><%= product.available %></span></p>
+                           
+                          </div>
+                        </div>
+                        <div class="but" style="display: flex;">
+                        <form action="/admin/product/<%= product._id %>/edit" method="GET" style="display: inline;">
+                            <button type="submit" style="padding: 8px 65px;">Edit</button>
+                          </form>
+                          <form action="/admin/product/<%= product._id %>/delete" method="GET" style="display: inline;">
+                            <button type="submit " style="padding: 8px 55px;">Delete</button>
+                          </form>
+                        </div> 
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <% }); %>   
+              </section>
+             
+</body>
+<script>
+    $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+</script>
+</html>

@@ -1,0 +1,69 @@
+<%-include('./partials/top.ejs') %> 
+    <link rel="stylesheet" href="css/service_center.css">
+    <link rel="stylesheet" href="css/saloon_header.css">
+</head>
+<body>
+    <div class="header2" style="margin-top: 45px;">
+        <div class="text-box2">
+         <div class ="img-wrap img-logo">
+             <img src="static/images/grooming.png" style="    margin-top: -45px;">
+       
+       </div> 
+     </div>
+        <div class="user-box2">
+         <img src="static/images/saloon2.jpg" width="100vw" height="153vh" alt="dog picture">
+        </div>
+ 
+     </div>
+    <div class="saloon">
+        <div class="sald">
+            <div class="saloondetails"> <h1 id="h1"><%= salon.saloonTitle %><br></h1></div>
+            <div class="saloondetails"><img src="static/images/dog_groom1.jpg" alt=""></div>
+        </div>
+        <div class="salp">
+            <div class="saloondetails"><b>S</b><%= salon.saloonDescription %></div><br>
+            <div class="saloondetails"> <b>Address:</b><br><%= salon.saloonTitle %>,<br>
+                <%= salon.saloonAddress %>,<br> <%=salon.saloonLocation%>
+                <br><br><b>Phone:</b> <%= salon.saloonNumber %><br>
+             </div>
+        </div>
+    </div>
+    <form action="/salserv" method="post">
+        <div class="saloon1">
+            <div class="services">
+                <div class="serv" id="serv1">
+                    <p>Services</p><br>
+
+                        <select id="" name="service" class="">
+                            <option value="Haircut">Haircut       200/-</option>
+                            <option value="Body Bath">Body Bath       200/-</option>
+                            <option value="Steam Bath">Steam bath       200/-</option>
+                            <option value="Paw Massage">Paw Massage       200/-</option>
+                            <option value="Nail Cut">Nail Cut       200/-</option>
+                            <option value="Haircut">Hair Cut       200/-</option>
+                          </select>
+                   
+                </div>
+            </div>
+            <div class="service">
+                <p>Book  a slot </p><br>
+                <select id="" name="timeslot" class="">
+                    <option value="10am - 11am">10am - 11am</option>
+                    <option value="11am - 12pm">11am - 12pm</option>
+                    <option value="2pm - 3pm">2pm - 3pm</option>
+                    <option value="3pm - 4pm">3pm - 4pm</option>
+                    <option value="4pm - 5pm">4pm - 5pm</option>
+                  </select>
+        </div>
+    </div>
+        <div class="saloon2">
+            <div  id="paysal1"><h3><b>EXCLUSIVELY PAY LATER FOR SERVICES</b></h3>
+            pay 100/- now</div>
+            <div  id="paysal2">
+                <button type="submit">BOOK NOW</button>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>

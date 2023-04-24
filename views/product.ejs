@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Products</h1>
+  <% products.forEach(product => { %>
+    <div class="product">
+      <img src="<%= product.image %>" alt="<%= product.title %>">
+      <h2><%= product.title %></h2>
+      <p><%= product.description %></p>
+      <p><%= product.price %></p>
+    </div>
+  <% }) %>
+</body>
+</html>

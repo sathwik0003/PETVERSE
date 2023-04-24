@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- views/orders.ejs -->
+
+<h1>Orders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Order ID</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Products</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(order => { %>
+      <tr>
+        <td><%= order.orderId %></td>
+        <td><%= order.customerName %></td>
+        <td><%= order.email %></td>
+        <td>Rs. <%= order.totalPrice %></td>
+        <td>
+          <% order.products.forEach(product => { %>
+            <div>
+              <%= product.name %> - Rs. <%= product.price %> x <%= product.quantity %>
+            </div>
+          <% }) %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+</body>
+</html>

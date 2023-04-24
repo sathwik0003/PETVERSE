@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SellAll</title>
+  <style>
+    .hihi {
+      display: flex;
+      width: 100%;
+    }
+
+    .buy-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+
+    .buy-buttons button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .buy-buttons button:hover {
+      background-color: #3e8e41;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      background-color: #45b99275;
+    }
+
+    .q1 {
+      background-color: #ff000073;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    #ni {
+      background-color: #edf4d3;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>PRODUCTS FROM OTHER SELLERS</h1>
+  </header>
+  <div class="q1">
+    <p>Contact the owner directly</p>
+    <p>At your own risk</p>
+    <p>Beware of fraud</p>
+    <p>Don't do any transactions before meeting</p>
+  </div>
+  <div>
+    <% petinfos.forEach(pet=> { %>
+  <div style="    border: 1px solid black  ; margin: 5px;">
+    <div id='ni' style="background-color: #edf4d3;">
+    
+        <div class="hihi" style="    margin: 2px;
+         border: 1px solid black;">
+          <div style="width: 39%;">
+            <img src="<%= pet.image %>" alt="" style="height: 20vw;width: 20vw;">
+          </div>
+          <div class="hi" style="   display: flex;">
+            <div class="fh" style=" margin: 56px 37px;">
+              <p><strong>Title:</strong>
+                <%= pet.title %>
+              </p>
+
+              <p><strong>Category:</strong>
+                <%=pet.race %>
+              </p>
+              <p><strong>Breed:</strong>
+                <%=pet.breed %>
+              </p>
+              <p><strong>Gender:</strong>
+                <%= pet.gender%>
+              </p>
+              <p><strong>Price:</strong>
+                <%=pet.price %>
+              </p>
+            </div>
+            <div class="lh" style=" margin: 56px 37px;">
+              <p><strong>Age(months):</strong>
+                <%= pet.age %>
+              </p>
+              <p><strong>Weight(grams):</strong>
+                <%= pet.weight %>
+              </p>
+              <p><strong>Owner:</strong>
+                <%= pet.name %>
+              </p>
+              <p><strong>Location:</strong>
+                <%= pet.location %>
+              </p>
+              <p><strong>Phone:</strong>
+                <%= pet.piphoneNumber %>
+              </p>
+            </div>
+            <p style="
+      margin: 53px 47px;
+      width: 55%;"><strong>Description:</strong>
+              <%= pet.description %>
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+    <script>
+      // JavaScript code for the page
+      const dealdone = document.querySelector('button:nth-of-type(1)');
+      const newproduct = document.querySelector('button:nth-of-type(2)');
+
+      dealdone.addEventListener('click', () => {
+        alert('Thank you for your purchase!');
+      });
+
+    </script>
+</body>
+
+</html>

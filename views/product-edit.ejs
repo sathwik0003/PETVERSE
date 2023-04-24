@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Product</title>
+
+</head>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body>
+  
+  <form class="form-horizontal" action="/admin/product/<%= product._id %>" method="POST">
+    <fieldset>
+		
+		<legend>EDIT PRODUCT</legend>
+    
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="name">PRODUCT TITLE</label>  
+        <div class="col-md-4">
+        <input id="name" name="name"  value="<%= product.name %>" class="form-control input-md" required="" type="text">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="description">PRODUCT DESCRIPTION</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="description" name="description" ><%= product.description %></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="pet_category">PET CATEGORY</label>
+        <div class="col-md-4">
+          <select id="pet_category" name="pet_category" class="form-control">
+                  <option value="cat">Cat</option>
+                  <option value="dog">Dog</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="product_category">PRODUCT CATEGORY</label>
+        <div class="col-md-4">
+          <select id="product_category" name="product_category" class="form-control">
+            <option value="food">Food</option>
+            <option value="accessories">Accessories</option>
+            <option value="bed">Bed</option>
+            <option value="grooming">Grooming</option>
+            <option value="toys">Toys</option>
+            <option value="toys">Clothing</option>
+          </select>
+        </div>
+      </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="available">AVAILABLE QUANTITY</label>  
+      <div class="col-md-4">
+      <input id="available" name="available" value="<%= product.available %>" class="form-control input-md" required="" type="number">
+        
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="price">PRICE</label>  
+        <div class="col-md-4">
+        <input id="price" name="price" value="<%= product.price %>" class="form-control input-md" required="" type="number">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">image</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="image" class="input-file" type="text" placeholder="ImageURL">
+        </div>
+      </div>
+      
+      
+      <!-- Button -->
+      <div class="form-group">
+       
+        <div class="col-md-4">
+          <input type="submit" value="Save" class="btn btn-primary" style="margin:10px 826px">
+       
+        </div>
+        </div>
+      
+      </fieldset>  
+  </form>
+  
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Product Form</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+   body{
+        background-image: url("/static/images/bg_6.jpg"); 
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+   .div2{
+    margin-left: 180px; 
+        width: 650px;
+        height: 600px;
+        overflow: hidden;
+        background:transparent;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 5px 10px 25px #000;
+        position: absolute;
+        left: 12%;
+        margin-top: -10px;
+        padding:30px;
+   } 
+   .form-horizontal .form-group{
+        margin-left: -140px;
+        margin-right: -314px;
+      }
+      button{
+        width:160px;
+      }
+      legend p{
+        margin-top: 10px;
+        margin-left: 570px;
+        font-weight: bold;
+        font-size: 24px;
+      }
+</style>
+</head>
+<body>
+   
+  <form class="form-horizontal" action="/admin/product" method="POST">
+    <fieldset>
+		
+		<legend><p>ADD PET</p></legend>
+     <div class="div2">
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="name">PET NAME</label>  
+        <div class="col-md-4">
+        <input id="name" name="name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="description">PET DESCRIPTION</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="pet_category">PET CATEGORY</label>
+        <div class="col-md-4">
+          <select id="pet_category" name="pet_category" class="form-control">
+                  <option value="cat">Cat</option>
+                  <option value="dog">Dog</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="product_category">PRODUCT CATEGORY</label>
+        <div class="col-md-4">
+          <select id="product_category" name="product_category" class="form-control">
+            <option value="pet">Pet</option>
+           
+          </select>
+        </div>
+      </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="breed">BREED</label>  
+      <div class="col-md-4">
+      <input id="breed" name="breed" placeholder="BREED" class="form-control input-md" required="" type="text">
+        
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="gender">GENDER</label>
+        <div class="col-md-4">
+          <select id="gender" name="gender" class="form-control">
+                  <option value="cat">Male</option>
+                  <option value="dog">Female</option>
+          </select>
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="year">BIRTH YEAR</label>  
+      <div class="col-md-4">
+      <input id="year" name="year" placeholder="YEAR" class="form-control input-md" required="" type="number">
+        
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="age">WEIGHT</label>  
+        <div class="col-md-4">
+        <input id="weight" name="weight" placeholder="WEIGHT(Kgs)" class="form-control input-md" required="" type="number">
+          
+        </div>
+      </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="price">PRICE</label>  
+        <div class="col-md-4">
+        <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="number">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">Image</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="image" class="input-file" type="text" placeholder="ImageURL" class="form-control input-md" required="">
+        </div>
+      </div>
+      
+      
+      <!-- Button -->
+      <div class="form-group">
+       
+        <!-- <div class="col-md-4"> -->
+          <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="margin:14px 340px">ADD PET</button></div>
+        <!-- </div> -->
+      
+        </div>
+        
+      
+      </fieldset>  
+   
+   
+  </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('static/images/back2.jpg');
+        }
+        .c2{
+            width: 100%;
+            text-align: center;
+            font-size: 7vw;
+        }
+        .c1{
+            margin-left: 35vw;
+            margin-right: 35vw;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+            padding-left: 1vw;
+            padding-bottom: 1vw;
+            background-color: white;
+        }
+        .c3 a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 2vw;
+        }
+        .c3{
+            width: 100%;
+            text-align: center;
+        }
+        .c4{
+            padding-left: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="c2">Saloon Pass</div>
+    <div class="c1">
+        <div>
+            <img src="static/images/cs1.jpeg" alt="">
+        </div>
+        <div class="c4">
+            <p> <h2>Name: <%= ticket.username  %></h2></p>
+            <p><h2>TimeSlot: <%= ticket.timings %></h2></p>
+            <p><h2>Services: <%= ticket.service %></h2></p>
+            <p><h2>Center: <%= ticket.center %></h2> </p>
+         </div>
+    </div>
+
+   <div class="c3"> <a href="/main">Return to homepage</a></div>
+</body>
+</html>

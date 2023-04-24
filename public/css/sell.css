@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#sellp {
+  
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    padding: 26px 2vw;
+    border-radius: 20px;
+}
+.sellp input{
+    height: 5vh;
+    width: 30vw;
+   border-radius: 1vh;
+   padding-left: 1vw;
+}
+#tad,#add{
+    border-radius: 3vh;
+    padding-left: 2vw;
+    padding-top: 2px;
+}
+
+#submits{
+    display: flex;
+    width: 10vw;
+    margin: 7px 9vw;
+    padding: 5px;
+    border-radius: 10px;
+    padding-left: 3vw;
+}

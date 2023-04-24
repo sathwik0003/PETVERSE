@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-image: linear-gradient(to right,#eef3f6,#00ffff61);
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    border-top: 1.5px solid black;
+}
+.k{
+    display: flex;
+}
+.k p{
+    margin: 3vh;
+    font-size: 6vw;
+    margin-left: 17vw;
+}
+pre{
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+}
+footer{
+    height:200px;
+    width:100%;
+    background-image: linear-gradient(white,rgb(137, 208, 208));
+}
+.copy{
+    display: flex;
+    justify-content:end;
+    padding-top: 21px;
+    padding-right: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.copy #ful li{
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.copy #ful{
+    border-right: 0.5px solid red;
+    border-left: 0.5px solid red;
+}
+footer .box{
+    background-color: red;
+    height: 0.5px;
+    margin-top: 25px ;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#cpr{
+    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.social{
+    margin-left: 20px;
+    height: 21px;
+    width: 113px;
+}
+#ful a{
+    text-decoration: none;
+   color: black;
+}
+.social ul li{
+    list-style: none;
+    padding: 10px;
+}
+.social ul{
+    display: flex;
+}
+.copy #full  li{
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+#full a{
+    text-decoration: none;
+    color: black;
+}
+.copy #full{
+    border-left: 0.5px solid red;
+}
+.copy #fullu li{
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 30px;
+    padding-top: 50px;
+}
+.copy #fullu {
+    display: flex;
+    padding-right: 150px;
+}
+.copy #fullu a{
+    text-decoration: none;
+    color: black;
+}
+.box1{
+    height: 20px;
+    background-color:#ff000094;
+    border-top: 2px solid black;
+}
+.box1 a{
+    text-decoration: none;
+    color: black;
+}

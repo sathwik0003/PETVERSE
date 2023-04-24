@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pet Listing</title>
+    <style>
+      .hihi{
+        display: flex;
+        width: 100%;
+        
+      }
+      
+      .buy-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .buy-buttons button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .buy-buttons button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pet Listing</h1>
+    </header>
+    
+    <div>
+      <% petinfo.forEach(pet => { %>
+         <div class="hihi">
+          <div style="width: 60%;">
+              <img src="<%= pet.image %>" alt="" style="height: 20vw;width: 20vw;">
+          </div>
+     <div class="hi">
+      <p><strong>Title:</strong><%= pet.title %></p>
+      <p><strong>Description:</strong> <%= pet.description  %></p>
+      <p><strong>Category:</strong><%=pet.race %></p>
+      <p><strong>Breed:</strong><%=pet.breed %></p>
+      <p><strong>Gender:</strong><%= pet.gender%></p>
+      <p><strong>Price:</strong><%=pet.price %></p>
+      <p><strong>Age(months):</strong><%= pet.age %></p>
+      <p><strong>Weight(grams):</strong><%= pet.weight %> </p>
+      <p><strong>Owner:</strong><%= pet.name %></p>
+      <p><strong>Location:</strong><%= pet.location %></p>
+      <p><strong>Phone:</strong><%= pet.piphonenumber %></p>
+     </div>
+         </div>
+      <div class="buy-buttons">
+          <button>Buy Now</button>
+          <button>Add to Cart</button>
+        </div>
+      <% }) %>
+    </div>
+    
+    <script>
+      // JavaScript code for the page
+      const buyNowButton = document.querySelector('button:nth-of-type(1)');
+      const addToCartButton = document.querySelector('button:nth-of-type(2)');
+      
+      buyNowButton.addEventListener('click', () => {
+        alert('Thank you for your purchase!');
+      });
+      
+      addToCartButton.addEventListener('click', () => {
+        alert('Item added to cart!');
+      });
+    </script>
+  </body>
+</html>

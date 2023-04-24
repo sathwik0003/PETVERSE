@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+           background-color: rgb(77 75 75 / 18%);;
+
+        }
+        form{
+            display: grid;
+            width: 35vw;
+            border: 3px solid white;
+            box-shadow: 3px 3px 6px;
+            border-radius: 10px;
+           background-color:  rgb(206 200 200 / 63%);
+        }
+        .c1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+        }
+        .c2{
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+        .i1, .i2{
+            outline: none;
+            border-width: 0px 0px 2px;
+            border-color: #404040;
+            transition: 0.4s;
+        }
+        .i3{
+            outline: none;
+            height: 24px;
+        }
+        .i3:focus{
+            outline: none;
+        }
+        .i1:focus, .i2:focus{
+            border-color: #66b1fa;
+        }
+        label{
+            margin-top: 1.5vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+        button{
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            height: 3vw;
+            width: 10vw;
+        }
+        .c3{
+            width: 100%;
+            text-align: center;
+        }
+        textarea{
+            resize: none;
+        }
+        button{
+            border-radius: 5px;
+            outline: none;
+            border: none;
+        }
+        button:hover{
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+        legend p{
+            margin-top: 30px;
+    margin-left: 604px;
+    font-weight: bold;
+    font-size: 32px;
+      }
+    </style>
+</head>
+<body>
+    
+    <legend><p>ADD SALOON</p></legend>
+   <div class="c1">
+    <form class="form-horizontal" action="/admin/saloon/<%= saloon._id %>" method="POST">
+        <label for="saloonTitle">Saloon Title:</label>
+        <input type="text" id="saloonTitle" name="saloonTitle" class="c2 i1" value="<%=saloon.saloonTitle%>">
+        <label for="saloonImageurl">Saloon ImageUrl</label>
+        <input type="text" id="saloonImageurl" name="saloonImageurl" class="c2 i1">
+        <label for="phoneNO">Phone Number</label>
+        <input type="text" id="saloonPhoneNo" name="phoneNo" class="c2 i1" value='<%=saloon.saloonNumber%>''>
+        <label for="saloonDescription">Saloon Description:</label>
+        <textarea id="saloonDescription" name="saloonDescription" class="c2 i2" ><%=saloon.saloonDescription%></textarea>
+        
+        <label for="saloonLocation">Saloon Location:</label>
+        <select id="saloonLocation" name="saloonLocation" class="c2 i3" value="<%=saloon.saloonLocation%>">
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Bangalore">Bangalore</option>
+        </select>
+        
+        <label for="saloonAddress">Saloon Address:</label>
+        <textarea id="saloonAddress" name="saloonAddress" class="c2 i2" ><%=saloon.saloonAddress%></textarea>
+        <div class="c3">
+            <button type="submit">EDIT SALOON</button>
+        </div>
+      </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/selllog.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Login</title>
+    <style>
+        .invalid {
+      border: 2px solid red;
+    }
+    img{
+        width: 400px;
+    height: 550px;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+                    <!-------Image-------->
+                    <img src="/static/images/dg1.jpg" alt="dog pic">
+                    
+                </div>
+                <div class="col-md-6 right">
+                     <div class="input-box">
+                        <header><h1><b>Sign up</b></h1></header>
+                        <form action="/sellregister" id="signform" method="post">
+                            <div class="input-field">
+                                <input type="text" class="input" id="fname" required autocomplete="off" name="sfname">
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" class="input" id="uname" required name="suname">
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" class="input" id="emailid" required name="semail">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="tel" class="input" id="phonenumber" required name="sphonenumber">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="password1" required name="spass1">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="password2" required name="spass2">
+                                <label for="cpassword">Confirm Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="submit" value="Sign Up" id="signbutton">
+                                
+                            </div>
+                        </form>
+                        <div class="signin">
+                            <span>Already have an account? <a href="/selllogin">Log in here</a></span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const signform = document.querySelector("#signform")
+const fullname = document.querySelector("#fname")
+const phonenumber=document.getElementById('phonenumber')
+const signbutton = document.getElementById('signbutton')
+const emailid = document.getElementById('emailid')
+const password1= document.getElementById('password1')
+const password2=document.getElementById('password2')
+const uname = document.getElementById('uname')
+
+console.log('load')
+
+
+const phoneRegex = /^((\+91)|\+)?[6789]\d{9}$/; 
+  const emailRegex = /^[a-zA-Z0-9+_-]+@[a-zA-Z0-9-]+[.]+[a-z]+$/; 
+  const passwordRegex = /^.{8,}$/;
+  const unameregex = /^(?=.*[A-Za-z])(?=.*\d)[\w]{6,}$/
+
+  signform.addEventListener("submit", function(event) {
+
+if (validateForm()) {
+    
+}
+
+else if(password1.value!=password2.value){
+    alert("Confirm Password properly")
+    let url="./views/sellsignup";
+        window.location.url
+}
+else {
+    alert("Enter valid input");
+    let url="./views/sellsignup";
+        window.location.url
+}
+});
+function validateForm() {
+  
+    let isValid = true;
+    if (!phoneRegex.test(phonenumber.value)) {
+        isValid = false;
+        phonenumber.classList.add("invalid");
+    } else {
+        phonenumber.classList.remove("invalid");
+    }
+    if (!emailRegex.test(emailid.value)) {
+        isValid = false;
+        emailid.classList.add("invalid");
+    } else {
+        emailid.classList.remove("invalid");
+    }
+    if (!passwordRegex.test(password1.value)) {
+        isValid = false;
+        password1.classList.add("invalid");
+    } else {
+        password1.classList.remove("invalid");
+    }
+    if (!unameregex.test(uname.value)) {
+        isValid = false;
+        uname.classList.add("invalid");
+    } else {
+        uname.classList.remove("invalid");
+    }
+    if (password1.value!==password2.value) {
+        isValid = false;
+        password2.classList.add("invalid");
+    } else {
+        uname.classList.remove("invalid");
+    }
+    return isValid
+}
+
+
+</script>
+</html>

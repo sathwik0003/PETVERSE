@@ -1,0 +1,74 @@
+<%-include('./partials/top.ejs') %> 
+    <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/login.css">
+<style>
+   .invalid {
+      border: 2px solid red;
+    }
+    body{
+        background: url('static/images/login_back.jpg') no-repeat center / cover;
+    }
+</style>
+
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+            <form action="/register" id="signform" method="post">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <div class="input_group">
+                    <div class="input_field">
+                        <i class="fa-solid fa-signature"></i>
+                        <input type="text" name="fullname" placeholder="Full Name" required id="fname">
+                    </div>
+                    <div class="input_field">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" name="phno" placeholder="Phone: 10 digits" required id="phonenumber">
+                    </div>
+                    <div class="input_field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" name="email" placeholder="Email" required id="emailid">
+                    </div>
+                    <div class="input_field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" required  id="uname">
+                    </div>
+
+                    <div class="input_field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password: min-len:8" required id="password1">
+                    </div>
+                    <div class="input_field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="cnfpassword" placeholder="Confirm Password" required id="password2">
+                    </div>
+                
+            </div>
+                <button type="submit" id="signbutton">Sign up</button>
+            </form>
+        </div>
+        <div class="login" >
+            <form action="/login" id="loginform" method="post">
+                <label for="chk" aria-hidden="true">Login</label>
+                <div class="input_field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Username" class="setValueDefault" required id="loginusername" name="lusername">
+                </div>
+
+                <div class="input_field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required id="loginpassword" name="lpassword">
+                    </div>
+                    
+                <button type="submit" >Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/login.js"></script>
+</body>
+</html>

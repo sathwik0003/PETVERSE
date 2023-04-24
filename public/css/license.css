@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: 16.624vw;
+    height: 14.95vh;
+    margin-bottom: -5px;
+}
+
+nav {
+    display: flex;
+}
+
+
+
+header {
+    background-image: linear-gradient(to right, #eef3f6, #00ffff61);
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    border-top: 1.5px solid black;
+}
+.license p {
+    font-family: 'Nunito', sans-serif;
+}
+
+.license h3, h2{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#head {
+    text-align: center;
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+    padding-left: 22%;
+    padding-top: 2%;
+    /* padding-left: 33%;
+    padding-top: 5%; */
+}
+
+.license {
+    padding-left: 5%;
+    padding-right: 2%;
+  
+}
+
+footer {
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(white, rgb(137, 208, 208));
+}
+
+.copy {
+    display: flex;
+    justify-content: end;
+    padding-top: 21px;
+    padding-right: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.copy #ful li {
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.copy #ful {
+    border-right: 0.5px solid red;
+    border-left: 0.5px solid red;
+}
+
+footer .box {
+    background-color: red;
+    height: 0.5px;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#cpr {
+    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.social {
+    margin-left: 20px;
+    height: 21px;
+    width: 113px;
+}
+
+#ful a {
+    text-decoration: none;
+    color: black;
+}
+
+.social ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+.social ul {
+    display: flex;
+}
+
+.copy #full li {
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+#full a {
+    text-decoration: none;
+    color: black;
+}
+
+.copy #full {
+    border-left: 0.5px solid red;
+}
+
+.copy #fullu li {
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 30px;
+    padding-top: 50px;
+}
+
+.copy #fullu {
+    display: flex;
+    padding-right: 150px;
+}
+
+.copy #fullu a {
+    text-decoration: none;
+    color: black;
+}

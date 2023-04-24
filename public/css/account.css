@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* background-image: url('/public/images/account-background.jpeg'); */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#acut {
+    min-width: 40rem;
+    backdrop-filter: blur(5px);
+    background-color: rgba(254, 254, 254, 0.4);
+    border-radius: 20px;
+    border: 2px solid rgb(173, 238, 173);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+#acuth {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#acut th, td {
+    padding: 20px 10px;
+    text-align: left;
+}
+
+#acut th {
+    padding-left : 5rem;
+}
+
+
+#changes {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#makechanges {
+    padding: 8px 6px;
+    border-radius: 5px;
+}
+
+#cform {
+    display: none;
+    min-width: 40rem;
+    backdrop-filter: blur(5px);
+    background-color: rgba(254, 254, 254, 0.4);
+    border-radius: 20px;
+    border: 2px solid rgb(173, 238, 173);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+#cform form {
+    width : 100%;
+    padding : 3rem;
+}
+
+#cforms {
+    display: flex;
+    justify-content: center;
+
+}
+
+#cformb {
+    padding: 8px 6px;
+    border-radius: 5px;
+}
+
+#cform label {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-weight: 600;
+    text-align: left;
+}
+
+#cform input {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    min-width: 15rem;
+    padding-left: 1rem;
+}
+
+.cinput {
+
+    display: flex;
+    justify-content: center;
+    margin : 1rem 0 ; 
+    gap : 2rem;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #a2dfe087;
+
+    }
+
+    .container {
+
+        height: 90vh;
+    }
+
+    .card {
+        background-color: #c1e8ed;
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #eee;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+
+    .inner-card {
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px
+    }
+
+    .heart {
+        cursor: pointer;
+        height: 35px;
+        width: 35px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #beb4aa;
+        border-radius: 50%;
+        background-color: #eee
+    }
+
+    .btn:focus {
+        color: #fff;
+        background-color: #025ce2;
+        border-color: #0257d5;
+        box-shadow: none
+    }
+
+    .its {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ok {
+        margin-left: 30px;
+    }
+    #nav{
+        background-color: white;
+       
+    }
+    .li{
+        padding: 0px 62px;
+    }
+    #add{
+        width: 262px;
+    }
+    #add:hover{
+        color: white;
+        background-color: rgb(49, 49, 49);
+    }
+    .icon{
+        display: flex;
+    }
+    #wish{
+        border: none;
+        margin: 1px 15px;
+    border-radius: 50%;
+    width: 39px;
+
+    }
+</style>
+
+<body>
+    <%-include('./partials/header.ejs') %> 
+
+
+    <p style="background-color: white;
+    height: 50px;
+    margin-top: 8px;
+    padding: 0px 680px;
+    font-size: 30px;
+    font-family: 'Prompt', sans-serif;
+">CATS</p></header>
+
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+        <div class="container-fluid">
+
+            
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active li" >
+                        <a class="nav-link" href="/catpet">Pets</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/catfood">Food</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/cataccess">Accessories</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/catgrooming">Grooming</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/cattoy">Toys</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/catbed">Bed</a>
+                    </li>
+                    <li class="nav-item li">
+                        <a class="nav-link" href="/catcloth">Clothing</a>
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+    <form method="POST" id="filter-form" action="/filter-dog-products" style="margin-left: 1150px;">
+        <label for="price-filter">Filter by Price:</label>
+        <select id="price-filter" name="filterValue">
+          <option value="all">All</option>
+          <option value="below-500">Below 500</option>
+          <option value="500-1000">500 - 1000</option>
+          <option value="above-1000">Above 1000</option>
+        </select>
+        <button id="filter-button" type="submit">Filter</button>
+      </form>
+      <ul id="product-list">
+        <!-- Product list items go here -->
+      </ul>
+    <div class="its">
+
+        <% products.forEach(product=> { %>
+            <div class="ok">
+
+                
+
+
+
+
+
+                <div class="card">
+                    <div class="inner-card">
+                    <form method="POST" action="/single-product">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                       
+                    <button><img src=" <%= product.image %>" class="img-fluid rounded"></button>
+                    </form>
+                        <div class="d-flex justify-content-between align-items-center mt-3 px-2">
+                            <h4>
+                                <%= product.name %>
+                            </h4>
+                        </div>
+                        <div class="mt-2 px-2"> <small>
+                                <%= product.description %>
+                            </small> </div>
+                        <div class="px-2">
+                            <h3>
+                                Rs. <%= product.price %>
+                            </h3>
+                        </div>
+                     <div class="icon">
+                        <form method="POST" id="add-to-cart-form" action="/add-to-cart-cat" >
+                            <input type="hidden" name="productId" value="<%= product._id %>">
+                        <button class="btn btn-outline-primary px-3" id="add"  type="submit">Add to cart</button>
+                        
+                    </form>
+                    <form method="POST" action="/add-to-wish-cat">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                  
+                  <button id="wish"><i class="fa-regular fa-heart fa-2x"></i></button>
+                </form>
+                     </div>
+                    </div>
+                </div>
+              
+            </div>
+
+
+           
+
+            
+
+            <% }) %>
+    </div>
+
+    
+</body>
+<script>
+   var form = document.getElementById('add-to-cart-form');
+  var button = document.getElementById('add');
+  form.addEventListener('submit', function(event) {
+    console.log('hi')
+    event.preventDefault();
+    button.innerText = 'Added to Cart';
+    // Submit the form after changing the button text
+    setTimeout(function() { form.submit(); }, 1000);
+  });
+  var productList = document.getElementById('product-list');
+
+function renderProducts(products) {
+  // Clear existing product list
+  productList.innerHTML = '';
+
+  // Render each product as a list item
+  products.forEach(product => {
+    var li = document.createElement('li');
+    li.innerHTML = `
+      <img src="${product.imageUrl}" alt="${product.name}">
+      <h2>${product.name}</h2>
+      <p>${product.description}</p>
+      <p>Price: $${product.price}</p>
+      <form method="POST" id="add-to-cart-form" action="/add-to-cart/${product._id}">
+        <button id="add" type="submit">Add to Cart</button>
+      </form>
+    `;
+    productList.appendChild(li);
+  });}
+  const filterButton = document.querySelector('#filter-button');
+    const priceFilter = document.querySelector('#price-filter');
+
+    filterButton.addEventListener('click', () => {
+      const filterValue = priceFilter.value;
+      window.location.href = `/filter-dog-products?price=${filterValue}`;
+    });
+
+</script>
+</html>

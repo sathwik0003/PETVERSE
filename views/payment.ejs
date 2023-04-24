@@ -1,0 +1,169 @@
+<%-include('./partials/top.ejs') %> 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <style>
+    .invalid {
+      border: 2px solid red;
+    }
+    .full{
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      margin-top: 7px;
+       }
+       .form{
+        width: 750px;
+        border-radius: 1px solid #bababa;
+        height: 100%;
+       }
+       #my-form{
+        width: 593px;
+        margin-top: 19px;
+        margin-left: 82px;
+       }
+       label{
+        margin-top: 10px;
+        margin-bottom: 2px;
+        margin-left: 0px;
+        margin-right: 0px;
+       }
+       .pa{
+        font-size: 40px;
+        margin: 0px 640px;
+        font-family: 'Nanum Gothic', sans-serif;
+        margin-top: 30px;
+       }
+       legend{
+        margin-left: 29px;
+        color: #747474;
+        margin-top: 50px;
+       }
+       .form2{
+        
+        background-color: white;
+        margin-top: 39px;
+        width: 561px;
+       }
+       .ok{
+        width: 100px;
+        margin: 20px;
+       }
+       .again{
+        display: flex;
+        flex-wrap: wrap;
+       }
+       img{
+        width: 70px;
+       }
+       .one{
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #00000040;
+             }
+             h4{
+              padding: 10px;
+              margin-left: 310px;
+             }
+  </style>
+  <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+  <p class="pa"><b>CheckOut</b></p>
+  <div class="full">
+  <div class="form">    
+<legend>PAYMENT DETAILS</legend>
+
+  <form id="my-form" action="/paymentcnf" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Sathwik" required>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name='address' placeholder="FlatNo:XXXXXX   CityPin:XXXXXX" required>
+
+    <label for="account-number">Account Number:</label>
+    <input type="text" id="account-number" placeholder="XXXX XXXX XXXX" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" placeholder="XXX" required>
+
+    <label for="exp-date">Expiry Date:</label>
+    <input type="text" id="exp-date" placeholder="MM/YYYY" required>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+</div>
+<div class="form2">
+  <legend>YOUR ORDER</legend>
+  <div class="again">
+    <% let totalPrice = 0 %>
+    <% order.items.forEach(item => { %>
+      <div class="one">
+  <div class="ok"> <img src="<%= item.image %>" alt=""> </div>
+  <div class="ok"><%= item.title %></div>
+  <div class="ok"><%= item.quantity %></div>
+  <div class="ok"><%= item.price %></div>
+</div>
+  <% let itemTotal = item.price * item.quantity %>
+  <% totalPrice += itemTotal %>
+  <% }) %>
+
+  <h4>Total Price: Rs. <%= totalPrice %></h4>
+</div>
+</div>
+</div>
+  <script>
+    const form = document.getElementById("my-form");
+    const accountNumberInput = document.getElementById("account-number");
+    const cvvInput = document.getElementById("cvv");
+    const expDateInput = document.getElementById("exp-date");
+
+    // Regex patterns for validation
+    const accountNumberRegex = /^[0-9]{4} [0-9]{4} [0-9]{4}$/;
+    const cvvRegex = /^[0-9]{3}$/;
+    const expDateRegex = /^(0[1-9]|1[0-2])\/([0-9]{4})$/;
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (validateForm()) {
+            // form is valid, submit it
+            form.submit();
+            alert("order placed succesfully")
+        }
+    });
+
+    function validateForm() {
+        let isValid = true;
+        // Validate Account Number
+        if (!accountNumberRegex.test(accountNumberInput.value)) {
+            isValid = false;
+            alert('Enter valid account number')
+            accountNumberInput.classList.add("invalid");
+        } else {
+            accountNumberInput.classList.remove("invalid");
+        }
+        // Validate CVV
+        if (!cvvRegex.test(cvvInput.value)) {
+            isValid = false;
+            alert('Enter valid cvv')
+            cvvInput.classList.add("invalid");
+        } else {
+            cvvInput.classList.remove("invalid");
+        }
+        // Validate Expiry Date
+        if (!expDateRegex.test(expDateInput.value)) {
+            isValid = false;
+            alert('Enter valid date')
+            expDateInput.classList.add("invalid");
+        } else {
+            expDateInput.classList.remove("invalid");
+        }
+        return isValid;
+    }
+  </script>
+</body>
+</html>

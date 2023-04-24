@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <% if (order === null) { %>
+          <p>You have no orders.</p>
+        <% } else { %>
+          <h2>Order Summary</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% let totalPrice = 0 %>
+              <% order.items.forEach(item => { %>
+                <tr>
+                  <td><%= item.productId.name %></td>
+                  <td><%= item.quantity %></td>
+                  <td>Rs. <%= item.price %></td>
+                  <td>Rs. <%= item.title %></td>
+                  <td>Rs. <%= item.image %></td>
+                  <td>Rs. <%= item.price * item.quantity %></td>
+                  <% let itemTotal = item.price * item.quantity %>
+                </tr>
+                <% totalPrice += itemTotal %>
+              <% }) %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" align="right"><strong>Total:</strong></td>
+                <td>Rs. <%= order.total %></td>
+              </tr>
+            </tfoot>
+          </table>
+        <% } %>
+      </body>
+      
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  body {
+    background-color: #ffed202e;
+
+  }
+
+  .container {
+
+    height: 90vh;
+  }
+
+  .card {
+    background-color: #ecedc1;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  .inner-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px
+  }
+
+  .heart {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #beb4aa;
+    border-radius: 50%;
+    background-color: #eee
+  }
+
+  .btn:focus {
+    color: #fff;
+    background-color: #025ce2;
+    border-color: #0257d5;
+    box-shadow: none
+  }
+
+  .its {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ok {
+    margin-left: 30px;
+  }
+</style>
+
+  <body>
+    
+    <%-include('./partials/header.ejs') %> 
+
+    <p style="    height: 65px;
+    font-size: 40px;
+    border-bottom: 1px solid #bcaaaa;
+    padding: 10px 600px;">CART</p>
+     <% let totalPrice = 0 %>
+      <% if (cart === null || cart.items.length === 0) { %>
+        <p>Your cart is empty.</p>
+      <% } else { %>
+        <div class="its">
+          <% cart.items.forEach(item => { %>
+            <div class="ok">
+              <div class="card">
+                <div class="inner-card">
+                  <img src="<%=item.image%> " class="img-fluid rounded">
+                  <div class="d-flex justify-content-between align-items-center mt-3 px-2">
+                    <h4><%= item.title %></h4>
+                  </div>
+                  <div class="mt-2 px-2">
+                    <small><%= item.description %></small>
+                  </div>
+                  <div class="px-2">
+                    <h3>Rs. <%= item.price %></h3>
+                  </div>
+                  
+                  <form method="POST" action="/update-cart">
+                    <input type="hidden" name="productId" value="<%= item.productId %>">
+                    <div class="form-group px-2">
+                      <label for="quantity">Quantity:</label>
+                      <select class="form-control" id="quantity" name="quantity">
+                        <% for (let i = 1; i <= 10; i++) { %>
+                          <option value="<%= i %>" <%= item.quantity == i ? "selected" : "" %>><%= i %></option>
+                        <% } %>
+                      </select>
+                      <div class="but" style="display: flex;">
+                    <button type="submit" class="btn btn-primary px-3">Update</button>
+                  </form>
+                  <form method="POST" action="/delete-item">
+                    <input type="hidden" name="productId" value="<%= item.productId %>">
+                    <button type="submit" class="btn btn-danger px-3">Delete</button>
+                  </form>
+                </div>
+                </div>
+                  <% let itemTotal = item.price * item.quantity %>
+                  <div class="px-2">
+                    <h3>Item Total: Rs. <%= itemTotal %></h3>
+                  </div>
+                  <% totalPrice += itemTotal %>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        <div class="buy" style="border: 2px solid black;
+        padding: 8px 600px;">
+        <div class="px-2">
+          <h3>Total Price: Rs. <%= totalPrice %></h3>
+        </div>
+        <form method="POST" action="/buy-now">
+          <button type="submit" class="btn btn-primary">Buy Now</button>
+        </form>
+      </div>
+        
+      <% } %>
+    </body>
+    
+
+
+  
+
+
+</html>

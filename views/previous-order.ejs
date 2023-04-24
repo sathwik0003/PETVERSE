@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/ea17de72ce.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    }
+    legend{
+        margin-left: 29px;
+        color: #747474;
+        margin-top: 50px;
+       }
+       .form2{
+        
+        background-color: white;
+        margin-top: 39px;
+        width: 561px;
+        margin-left: 450px;
+    border: 1px solid #a7a5a5;
+       }
+       .ok{
+        width: 100px;
+        margin: 20px;
+       }
+       .again{
+        display: flex;
+        flex-wrap: wrap;
+       }
+       img{
+        width: 70px;
+       }
+       .one{
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #00000040;
+             }
+             h4{
+              padding: 10px;
+              margin-left: 310px;
+             }
+</style>
+<body>
+    <!-- previous-orders.ejs -->
+
+    <%-include('./partials/header.ejs') %> 
+
+
+    <p style="background-color: white;
+    height: 50px;
+    margin-top: 8px;
+    padding: 0px 568px;
+    font-size: 30px;
+    font-family: 'Prompt', sans-serif;
+">PREVIOUS ORDERS</p></header>
+
+    <% if (orders.length === 0) { %>
+        <p>No orders found.</p>
+    <% } else { %>
+        <% orders.forEach(order => { %>
+            <div class="form2">
+                <legend>
+                    <h2>Order <%= order.orderId %></h2>
+                    <p>Ordered on: <%= order.created_at %></p>
+                </legend>
+                <div class="again">
+                    <% let totalPrice = 0 %>
+                    <% order.items.forEach(item => { %>
+                        <div class="one">
+                            <div class="ok"> <img src="<%= item.image %>" alt=""> </div>
+                            <div class="ok"><%= item.title %></div>
+                            <div class="ok"><%= item.quantity %></div>
+                            <div class="ok"><%= item.price %></div>
+                        </div>
+                        <% let itemTotal = item.price * item.quantity %>
+                        <% totalPrice += itemTotal %>
+                    <% }) %>
+
+                    <h4>Total Price: Rs. <%= totalPrice %></h4>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+</body>
+
+</html>

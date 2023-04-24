@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Product Form</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+      body{
+        background-image: url("/static/images/bg.jpeg"); 
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+       .div1{
+        /* border:2px solid grey;
+        padding:20px;
+        width:830px;
+        box-sizing: border-box;
+        
+        margin-left: 180px; */
+        width: 630px;
+        height: 470px;
+        overflow: hidden;
+        background:transparent;
+        border-radius: 15px;
+        box-shadow: 5px 10px 25px #000;
+        position: absolute;
+        left: 25%;
+        margin-top: -10px;
+        padding:30px;
+      } 
+      .form-horizontal .form-group{
+        margin-left: -90px;
+        margin-right: -314px;
+      }
+      legend p{
+        margin-top: 10px;
+        margin-left: 530px;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      
+</style>
+</head>
+<body>
+   
+  <form class="form-horizontal" action="/admin/product" method="POST">
+    <fieldset>
+		
+		<legend><p>ADD PRODUCT</p></legend>
+     <div class="div1">
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="name">PRODUCT TITLE</label>  
+        <div class="col-md-4">
+        <input id="name" name="name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="description">PRODUCT DESCRIPTION</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="pet_category">PET CATEGORY</label>
+        <div class="col-md-4">
+          <select id="pet_category" name="pet_category" class="form-control">
+                  <option value="cat">Cat</option>
+                  <option value="dog">Dog</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="product_category">PRODUCT CATEGORY</label>
+        <div class="col-md-4">
+          <select id="product_category" name="product_category" class="form-control">
+            <option value="food">Food</option>
+            <option value="accessories">Accessories</option>
+            <option value="bed">Bed</option>
+            <option value="grooming">Grooming</option>
+            <option value="toys">Toys</option>
+            <option value="toys">Clothing</option>
+          </select>
+        </div>
+      </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="available">AVAILABLE QUANTITY</label>  
+      <div class="col-md-4">
+      <input id="available" name="available" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="number">
+        
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="price">PRICE</label>  
+        <div class="col-md-4">
+        <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="number">
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">image</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="image" class="input-file" type="text" placeholder="ImageURL">
+        </div>
+      </div>
+    
+      
+      <!-- Button -->
+       <div class="form-group">
+       
+        <!-- <div class="col-md-4"> -->
+          <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="margin:14px 320px">ADD PRODUCT</button></div>
+        <!-- </div> -->
+      
+         </div>
+     
+    
+      </fieldset>  
+   
+   
+  </form>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<style>
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .page-bread {
+        background-color: rgb(51, 177, 194);
+        height: 80px;
+    }
+    h3 {
+        padding: 18px;
+    }
+    .col-sm-6 h3 {
+    font-size: 6vh;
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+    font-family: 'Tilt Neon', cursive;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%   { left:40vh; top:0vh;}
+    100%  { left:60vh; top:0vh;}
+}
+    .row2 {
+        width: 660px;
+        height: 800px;
+        overflow: hidden;
+        background:transparent;
+        border-radius: 15px;
+        box-shadow: 5px 10px 35px #000;
+        position: absolute;
+        left: 25%;
+        margin-top: 20px;
+        padding:30px;
+
+    }
+    .invalid {
+      border: 2px solid red;
+    }
+    #sellform{
+        margin-top: 10px;
+    }
+   
+</style>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container" >
+          <a class="navbar-brand" href="#" >PETVERSE</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav">
+              <li class="nav-item" >
+                <a class="nav-link " href="#" style="  color: white;" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/sellersaccount" style="  color: white;">My Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/sellform" style="  color: white;">Sell</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/petpost" style="  color: white;">Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/" style="  color: white;">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="page-bread mb70">
+        <div class="container">
+            <div class="row1">
+                <div class="col-sm-6">
+                    <h3>Add Your Pets Here..</h3>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row2">
+            <form style="padding: 28px; margin-top: -10px;" id="sellform" action="/petinfo" method="post">
+                <div class="form-group" style="padding: 10px 0px;">
+                    <input class="form-control" name="title" type="text" placeholder="Title" required="">
+                </div>
+                <div class="form-group" style="padding: 10px 0px; ">
+                    <textarea class="form-control" name="description" id="note" placeholder=" Description"
+                        rows="4"></textarea>
+                    <div class="textarea-resize"></div>
+                </div>
+
+                <div class="form-group" style="padding: 10px 0px;">
+                      
+                       <select id="category" name="category" class="form-control">
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                </select>
+                </div>
+                <div class="form-group" style="padding: 10px 0px;">
+                    <input class="form-control" name="breed" type="text" placeholder="Pet Breed" required="">
+                </div>
+                <div class="form-group" style="padding: 10px 0px;">
+
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="cat">Male</option>
+                        <option value="dog">Female</option>
+                </select>
+                </div>
+                <div class="mb40">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group" style="padding: 10px 0px;">
+                                <input type="text" class="form-control" name="price" placeholder="Price" required="" id="price">
+                            </div>
+                            <div class="form-group" style="padding: 10px 0px;">
+                                <input class="form-control" name="weight" type="text" placeholder="Pet Weight "
+                                    required="" id="weight">
+                            </div>
+                            <div class="form-group" style="padding: 10px 0px;">
+                                <input class="form-control" name="age" type="text" placeholder="Pets Age " id="age">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="form-group-icon mb15" style="padding: 10px 0px;">
+                                <i class="fa fa-location-arrow"></i>
+                                <input type="text" class="form-control" name="location" placeholder="Location">
+                            </div>
+                            <div class="form-group-icon mb15" style="padding: 10px 0px;">
+                                <i class="fa fa-home"></i>
+                                <input type="text" class="form-control" name="name" value="" placeholder="Username">
+                            </div>
+                            <div class="form-group-icon mb15" style="padding: 10px 0px;">
+                                <i class="fa fa-phone"></i>
+                                <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="padding: 10px 0px;">
+                    <label for="file">Add Gdrive link</label>
+                    <input type="text" class="form-control-file" id="file" name="image">
+                </div>
+                <div class="text-right mb40">
+                    <button name="post_ads" type="submit" class="btn btn-lg btn-primary" id="subm" style="border-radius:20px; background-color: rgb(12, 136, 136); border:1px solid black; font-size: 20px; ">Submit</button>
+                </div>
+            </form>
+            <a href="/formnext">View your products</a>
+            <a href="/sellersaccount">Dash Board</a>
+        </div>
+    </div>
+</body>
+<script>
+    const sellform = document.getElementById('sellform')
+    const subm = document.getElementById('subm')
+    const  price= document.getElementById('price')
+    const  age= document.getElementById('age')
+    const  weight= document.getElementById('weight')
+    const positiveregex = /^\d+(\.\d+)?$/
+    sellform.addEventListener("submit", function(event) {
+
+if (validateForm()) {
+    
+}
+else {
+    alert("Enter valid input");
+    let url="./views/sellform";
+        window.location.url
+}
+});
+function validateForm() {
+  
+  let isValid = true;
+  if (!positiveregex.test(price.value)) {
+      isValid = false;
+      price.classList.add("invalid");
+  } else {
+      price.classList.remove("invalid");
+  }
+  if (!positiveregex.test(age.value)) {
+      isValid = false;
+      age.classList.add("invalid");
+  } else {
+      age.classList.remove("invalid");
+  }
+  if (!positiveregex.test(weight.value)) {
+      isValid = false;
+      weight.classList.add("invalid");
+  } else {
+      weight.classList.remove("invalid");
+  }
+  return isValid
+}
+
+</script>
+
+</html>

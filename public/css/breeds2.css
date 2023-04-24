@@ -1,0 +1,61 @@
+.header{
+    width:77vw;
+    height:25vh;
+    padding:0 10%;
+   background-color:rgb(120, 154, 212);
+    background-position: left;
+    border-radius: 1vh;
+    border-top-right-radius: 240vh;
+    border-bottom-right-radius: 240vh;
+    margin-top: 1vh;
+   
+}
+
+.text-box p{
+    padding:5vh 1vh;
+    font-size: 8vh;
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+    font-family: 'Tilt Neon', cursive;
+    animation-iteration-count: infinite;
+    font-style: bold;
+    
+
+}
+
+@keyframes example {
+    0%   { left:0vh; top:0vh;}
+    100%  { left:20vh; top:0vh;}
+}
+.user-box{
+  
+    position:absolute;
+    top:30vh;
+    bottom:15vh;
+    right:-2%;
+height: 15px;
+
+}
+.user-box img{
+    width:30vw;
+    display:block;
+    border-top-left-radius: 50vh;
+   
+     /* margin-right:4vw; */
+     margin-top: -8vh;
+    /* border-top: 14vw; */
+    
+}
+
+@media (max-width:1032px){
+    .user-box img{
+        display:none
+    }
+}
+@media (max-width:575px){
+   .text-box p{
+    padding: 1vh 0.5vw;
+    animation: none;
+   }
+}
